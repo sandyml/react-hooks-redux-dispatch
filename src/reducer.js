@@ -9,22 +9,14 @@ function changeState(state, action) {
   }
 }
 
-function render() {
-  const app = document.querySelector("#app");
-  app.textContent = state.count;
-}
-
 function dispatch(action) {
   state = changeState(state, action);
-  render();
+  return state;
 }
 
-// call the render function
-render();
-
 dispatch({ type: "counter/increment" });
-// // => {count: 1}
+// => {count: 1}
 dispatch({ type: "counter/increment" });
-// // => {count: 2}
+// => {count: 2}
 dispatch({ type: "counter/increment" });
-// // => {count: 3}
+// => {count: 3}
